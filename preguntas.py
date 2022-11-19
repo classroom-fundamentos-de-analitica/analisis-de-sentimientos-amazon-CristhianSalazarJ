@@ -25,12 +25,12 @@ def pregunta_01():
         "amazon_cells_labelled.tsv",
         sep="\t",
         header=None,
-        names=['msg','lbl'],
+        names=["msg","lbl"],
     )
 
     # Separe los grupos de mensajes etiquetados y no etiquetados.
     df_tagged = df[df["lbl"].notnull()]
-    df_untagged = df[df["lbl"].notnull()]
+    df_untagged = df[df["lbl"].isnull()]
 
     x_tagged = df_tagged["msg"]
     y_tagged = df_tagged["lbl"]
